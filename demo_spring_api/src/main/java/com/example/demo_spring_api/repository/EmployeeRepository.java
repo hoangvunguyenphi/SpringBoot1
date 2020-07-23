@@ -12,14 +12,14 @@ import java.util.List;
 public interface EmployeeRepository {
 
     @Select("select * from tb_emp")
-    public List<Employee> getAllEmp ();
+    List<Employee> getAllEmp ();
 
     @Select("select * from tb_emp WHERE id = #{id}")
-    public Employee getEmpById (int id);
+    Employee getEmpById (int id);
 
     @Insert("insert into tb_emp (id,name,gender,department,dob) values (#{id}, #{name}, #{gender}, #{department}, #{dob})")
-    public int saveEmp (Employee e);
+    int saveEmp (Employee e);
 
     @Delete("delete from tb_emp where id = #{id}")
-    public int deleteEmpById (int id);
+    int deleteEmpById (int id);
 }
